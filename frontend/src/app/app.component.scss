@@ -7,8 +7,15 @@
   color: #6D6A4F;
 }
 
-.buscador{
-    input{
-        // width: 350px;
-    }
+
+.buscador {
+  input {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador input {
+    width: 350px;
+  }
 }

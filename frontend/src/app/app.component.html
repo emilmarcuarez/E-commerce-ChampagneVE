@@ -44,48 +44,70 @@
   </div>
 </nav>
 
-<!-- Menú inferior responsive -->
-<nav class="navbar navbar-expand-lg bg-premium text-white">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuInferior" aria-controls="menuInferior" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-around" id="menuInferior">
-      <div class="navbar-nav w-100 d-flex flex-wrap justify-content-around">
-        <div class="dropdown">
-          <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Collares</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Collar 1</a></li>
-            <li><a class="dropdown-item" href="#">Collar 2</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Zarcillos</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Zarcillo 1</a></li>
-            <li><a class="dropdown-item" href="#">Zarcillo 2</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Brazaletes</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Brazalete 1</a></li>
-            <li><a class="dropdown-item" href="#">Brazalete 2</a></li>
-          </ul>
-        </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Otros</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Producto 1</a></li>
-            <li><a class="dropdown-item" href="#">Producto 2</a></li>
-          </ul>
-        </div>
-        <div>
-          <a class="text-white text-decoration-none" href="#"><i class="bi bi-ticket-perforated me-1"></i>Ingresa cupón</a>
-        </div>
+
+<!-- Menú inferior solo visible en desktop -->
+<nav class="navbar bg-premium text-white d-none d-lg-flex justify-content-around py-2 text-center">
+  <div class="dropdown">
+    <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Collares</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Collar 1</a></li>
+      <li><a class="dropdown-item" href="#">Collar 2</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Zarcillos</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Zarcillo 1</a></li>
+      <li><a class="dropdown-item" href="#">Zarcillo 2</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Brazaletes</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Brazalete 1</a></li>
+      <li><a class="dropdown-item" href="#">Brazalete 2</a></li>
+    </ul>
+  </div>
+  <div class="dropdown">
+    <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Otros</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Producto 1</a></li>
+      <li><a class="dropdown-item" href="#">Producto 2</a></li>
+    </ul>
+  </div>
+  <div>
+    <a class="text-white text-decoration-none" href="#"><i class="bi bi-ticket-perforated me-1"></i>Ingresa cupón</a>
+  </div>
+</nav>
+
+
+<!-- Menú inferior en móvil como modal -->
+
+
+<div class="d-lg-none text-center py-2">
+  <button class="btn d-flex align-items-center justify-content-center mx-auto" style="font-size:1rem; color: #757654; background: transparent;" data-bs-toggle="modal" data-bs-target="#menuModal">
+    <span>Accesorios</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#757654" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M6.646 12.854a.5.5 0 0 1 0-.708L10.293 8 6.646 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708 0z"/></svg>
+  </button>
+</div>
+
+<!-- Modal de menú inferior -->
+<div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content animate__animated animate__fadeInDown">
+      <div class="modal-header bg-premium text-white">
+        <h5 class="modal-title w-100 text-center" id="menuModalLabel">Opciones</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center gap-4 py-4">
+        <a href="#" class="text-premium text-decoration-none fs-4">Collares</a>
+        <a href="#" class="text-premium text-decoration-none fs-4">Zarcillos</a>
+        <a href="#" class="text-premium text-decoration-none fs-4">Brazaletes</a>
+        <a href="#" class="text-premium text-decoration-none fs-4">Otros</a>
+        <a class="text-premium text-decoration-none fs-5 mt-3" href="#"><i class="bi bi-ticket-perforated me-1"></i>Ingresa cupón</a>
       </div>
     </div>
   </div>
-</nav>
+</div>
 
 <router-outlet></router-outlet>

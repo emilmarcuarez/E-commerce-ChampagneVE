@@ -1,14 +1,129 @@
+@import 'src/styles.scss';
+
 .div-logo-champagne{
     img{
         max-width: 500px;
     }
     p{
-        color: #fff; 
+        color: $blanco;
         text-shadow: 0 2px 8px #000;
     }
 }
 
 // seccion de descubre la nueva coleccion
 .seccion-descubre {
+    height: 650px;
+    max-width: 80%;
+    background-image: url('../../assets/champagne-descubre.png'); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    border-radius: 10px;
+     display: flex ;
+     flex-direction: column;
+     justify-content: flex-end ;
+     align-items: flex-start;
+    .seccion-descubre-content{
+        display: flex ;
+        flex-direction: column;
+        justify-content: flex-end ;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        margin-left: 30px;
 
+        p,h2, button{
+            color: $blanco;
+        }
+        h2{
+            font-weight: 600;
+            span{
+                font-style: italic;
+                font-weight: 400;
+            }
+        }
+        button{
+            background-color: $accent-color ;
+
+            &:focus, &:hover{
+                background-color: darken($accent-color, 10%);
+            }
+        }
+    }
+
+
+
+  // Responsive para móviles
+  @media (max-width: 576px) {
+    height: 350px;
+    max-width: 90%;
+    border-radius: 6px;
+    .seccion-descubre-content {
+      margin-bottom: 10px;
+      margin-left: 10px;
+      h2 {
+        font-size: 1.1rem;
+      }
+      p {
+        font-size: 0.90rem;
+      }
+      button {
+        font-size: 0.9rem;
+        padding: 6px 18px;
+      }
+    }
+  }
+}
+
+// quienes somo
+.quienes-somos_imagen{
+  img{
+    height: 60%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 10px;
+    display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+
+  // Responsive para móvil
+  @media (max-width: 576px) {
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+    justify-content: center !important;
+    margin-top: 20px;
+    .col-12.col-lg-6 .mt-5 {
+      line-height: 1 !important;
+    }
+    .col-12.col-lg-6 p {
+      font-size: 1rem !important;
+    }
+  }
+}
+.quienes-somos_texto{
+  p{
+    font-size: 1.2rem;
+    line-height:3;
+  }
+  h4{
+    font-style: italic;
+    font-size: 1rem;
+    color: $primary-color;
+  }
+
+    @media (max-width: 576px) {
+    h2,h4{
+      text-align: center;
+    }
+      p{
+    font-size: 1rem;
+    line-height:1.9;
+  }
+    }
 }

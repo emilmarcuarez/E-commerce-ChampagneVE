@@ -1,10 +1,11 @@
+@import 'src/styles.scss';
 
 .bg-premium {
-  background-color: #6D6A4F;
+  background-color: $primary-color;
 }
 
 .text-premium {
-  color: #6D6A4F;
+  color: $primary-color;
 }
 
 

@@ -78,9 +78,112 @@
   </div>
 
   <!-- cont2, imagen -->
-   <div class="quienes-somos_imagen col-12 col-lg-6 d-flex justify-content-end">
+   <div class="quienes-somos_imagen col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
     <img src="assets/inicio-champagne.webp" alt="Champagne ofrece accesorios unicos y originales, hechos a mano con amor y dedicación.">  
   </div>
 
 </div>
 </div>
+
+<!-- productos destacados -->
+ <div class="bg-productos-destacados">
+
+<section class="productos-destacados container my-5">
+  <h2 class="titulo">PRODUCTOS DESTACADOS</h2>
+
+  <div class="productos-scroll-wrapper position-relative">
+    <!-- Botón izquierda -->
+    <button class="btn-scroll btn-left d-none d-md-flex" id="btnLeft">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <!-- Carrusel horizontal -->
+ <div class="productos-scroll" id="productosScroll" #productosScroll>
+      <div class="producto">
+        <img src="assets/destacados/1.webp" alt="Producto 1">
+        <p>Aurora</p>
+      </div>
+      <div class="producto">
+        <img src="assets/destacados/2.webp" alt="Producto 2">
+        <p>Amor Collection</p>
+      </div>
+      <div class="producto">
+        <img src="assets/destacados/3.webp" alt="Producto 3">
+        <p>Jazmín</p>
+      </div>
+      <div class="producto">
+        <img src="assets/destacados/4.webp" alt="Producto 4">
+        <p>La Reina y la Bestia</p>
+      </div>
+      <div class="producto">
+        <img src="assets/destacados/5.webp" alt="Producto 5">
+        <p>La Reina y la Bestia</p>
+      </div>
+      <div class="producto">
+        <img src="assets/destacados/6.webp" alt="Producto 6">
+        <p>La Reina y la Bestia</p>
+      </div>
+      <div class="producto">
+        <img src="assets/destacados/7.webp" alt="Producto 7">
+        <p>La Reina y la Bestia</p>
+      </div>
+    </div>
+
+    <!-- Botón derecha -->
+    <button class="btn-scroll btn-right d-none d-md-flex" id="btnRight">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="text-center mt-3">
+    <a href="/colecciones" class="btn btn-sm btn-colecciones">¡Visita todos los productos aquí!</a>
+  </div>
+</section>
+ </div>
+
+
+ <!-- promociones y eventos -->
+
+<section class="promociones-especiales container my-5">
+  <h5 class="titulo">PROMOCIONES ESPECIALES</h5>
+  <div class="promo-grid">
+    <div class="promo-card" *ngFor="let promo of promociones">
+      <img [src]="promo.img" [alt]="promo.titulo" class="promo-img">
+      <h6>{{ promo.titulo }}</h6>
+      <p>{{ promo.descripcion }}</p>
+    </div>
+
+    <!-- Espacios vacíos para completar 4 si hay menos promos -->
+    <ng-container *ngIf="promociones.length < 4">
+      <div class="promo-card empty" *ngFor="let i of createArray(4 - promociones.length)"></div>
+    </ng-container>
+  </div>
+</section>
+
+
+<section class="eventos container my-5">
+  <h5 class="titulo">EVENTOS</h5>
+  <div class="row g-3">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="evento-card">
+        <img src="assets/promos/3.webp" alt="Bazar">
+        <p>Bazar</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="evento-card">
+        <img src="assets/promos/4.webp" alt="Especial">
+        <p>Especial (evento propio de tienda)</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="evento-card">
+        <img src="assets/promos/1.webp" alt="Expo">
+        <p>Expo</p>
+      </div>
+    </div>
+    <!-- Puedes agregar más eventos aquí -->
+  </div>
+</section>
+
+

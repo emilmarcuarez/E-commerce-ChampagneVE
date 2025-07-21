@@ -20,3 +20,33 @@
     width: 350px;
   }
 }
+
+.bg-footer{
+  background-color: rgb(231, 231, 231);
+  margin-bottom: 0;
+  padding: 1rem;
+   color: gray;
+  line-height: 2;
+  p{
+    margin: 0;
+    color: gray;
+  }
+  .footer-enlaces{
+    margin-top: 10px;
+    a{
+      text-decoration: none;
+      color: $primary-color;
+      background-color: $blanco;
+      padding: 5px 15px;
+      border-radius: 50%;
+      &:hover{
+        background-color: $primary-color;
+        color: $blanco;
+        transition: 0.3s ease-in-out;
+          padding: 5px 15px;
+      border-radius: 50%;
+      }
+    }
+  }
+
+}

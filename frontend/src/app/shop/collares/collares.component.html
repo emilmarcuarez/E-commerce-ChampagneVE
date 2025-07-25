@@ -1,0 +1,45 @@
+<!-- Banner superior -->
+<div class="hero-collares">
+  <div class="overlay">
+    <h1 class="titulo-banner">COLLARES</h1>
+    <img src="assets/logo-champagne.png" alt="Champagne logo" class="logo-banner">
+  </div>
+</div>
+
+<!-- Categorías -->
+<section class="categorias container text-center my-4">
+  <div class="row justify-content-center gy-3">
+    <div class="col-6 col-sm-3 col-md-2" *ngFor="let categoria of categorias">
+      <div class="categoria-card">
+        <img [src]="categoria.imagen" [alt]="categoria.nombre">
+        <p>{{ categoria.nombre }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lista de productos -->
+<section class="productos container">
+  <div class="row gy-4">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2" *ngFor="let collar of collares">
+      <div class="producto-card position-relative">
+        <img [src]="collar.imagen" [alt]="collar.nombre">
+        <button class="btn-agregar"><i class="bi bi-plus"></i></button>
+        <div class="info">
+          <p class="nombre">{{ collar.nombre }}</p>
+          <p class="precio">$ {{ collar.precio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Eventos -->
+<section class="eventos container my-5">
+  <h5 class="titulo mb-4">Próximos eventos</h5>
+  <div class="row gy-4">
+    <div class="col-6 col-md-3" *ngFor="let evento of eventos">
+      <img [src]="evento.imagen" alt="Evento" class="evento-img w-100">
+    </div>
+  </div>
+</section>

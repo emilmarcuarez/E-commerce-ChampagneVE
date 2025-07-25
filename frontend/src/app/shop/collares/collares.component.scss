@@ -1,0 +1,128 @@
+.hero-collares {
+  position: relative;
+  background-image: url('/assets/inicio-champagne.webp');
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+
+  @media (min-width: 768px) {
+    height: 680px;
+  }
+
+  .overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .titulo-banner {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) {
+      font-size: 2.8rem;
+      top: 40px;
+      left: 40px;
+    }
+  }
+
+  .logo-banner {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+
+    @media (min-width: 768px) {
+      width: 240px;
+      bottom: 30px;
+    }
+  }
+}
+
+
+
+.categoria-card {
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+}
+
+.producto-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.2s;
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .btn-agregar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #7a7a7a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info {
+    text-align: center;
+    padding: 0.5rem;
+
+    .nombre {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .precio {
+      font-size: 0.8rem;
+      color: #555;
+      margin: 0;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.titulo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.evento-img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+

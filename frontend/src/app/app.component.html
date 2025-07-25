@@ -1,3 +1,19 @@
+<!-- Modal para ingresar cupón global (fuera de cualquier otro modal) -->
+<div class="modal fade" id="cuponModalGlobal" tabindex="-1" aria-labelledby="cuponModalGlobalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content animate__animated animate__fadeInDown">
+      <div class="modal-header bg-premium text-white">
+        <h5 class="modal-title w-100 text-center" id="cuponModalGlobalLabel">Ingresa tu cupón</h5>
+        <button type="button" class="btn-close" (click)="closeCuponModal()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center gap-3 py-4">
+        <input type="text" class="form-control w-75" placeholder="Código de cupón" />
+        <button class="btn btn-premium">Aplicar cupón</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div>
 <!-- Barra superior -->
 <div class="bg-premium text-white text-center p-1">
@@ -20,12 +36,12 @@
     <div class="collapse navbar-collapse" id="navbarChampagne">
       <!-- Categoría + Buscador -->
       <div class="d-flex align-items-center buscador mb-2 mb-lg-0 m-auto">
-        <select class="form-select me-2 mb-2 mb-lg-0" style="max-width: 150px;">
-          <option>Categorías</option>
-          <option>Collares</option>
-          <option>Zarcillos</option>
-          <option>Brazaletes</option>
-          <option>Otros</option>
+        <select class="form-select me-2 mb-2 mb-lg-0" style="max-width: 150px;" (change)="onCategoryChange($event)">
+          <option value="">Categorías</option>
+          <option value="shop/collares">Collares</option>
+          <option value="shop/zarcillos">Zarcillos</option>
+          <option value="shop/brazaletes">Brazaletes</option>
+          <option value="shop/otros">Otros</option>
         </select>
         <input type="text" class="form-control me-2 mb-2 mb-lg-0" placeholder="Busca aquí..." />
         <i class="bi bi-search fs-5 text-premium" style="cursor: pointer;"></i>
@@ -33,7 +49,7 @@
 
       <!-- Íconos al extremo derecho -->
       <div class="d-flex align-items-center gap-3 ms-lg-auto mb-2 mb-lg-0">
-        <a href="/login" class="d-flex align-items-center text-decoration-none text-premium">
+        <a routerLink="/login" class="d-flex align-items-center text-decoration-none text-premium">
           <i class="bi bi-person fs-5 me-1"></i> <span>Iniciar sesión</span>
         </a>
         <button class="btn pt-2 pb-2 ps-3 pe-3" style="background-color: #d8d8d2; border-radius: 50%;">
@@ -50,33 +66,29 @@
   <div class="dropdown">
     <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Collares</a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Collar 1</a></li>
-      <li><a class="dropdown-item" href="#">Collar 2</a></li>
+      <li><a class="dropdown-item" routerLink="/shop/collares">Ver todos</a></li>
     </ul>
   </div>
   <div class="dropdown">
     <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Zarcillos</a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Zarcillo 1</a></li>
-      <li><a class="dropdown-item" href="#">Zarcillo 2</a></li>
+      <li><a class="dropdown-item" routerLink="/shop/zarcillos">Ver todos</a></li>
     </ul>
   </div>
   <div class="dropdown">
     <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Brazaletes</a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Brazalete 1</a></li>
-      <li><a class="dropdown-item" href="#">Brazalete 2</a></li>
+      <li><a class="dropdown-item" routerLink="/shop/brazaletes">Ver todos</a></li>
     </ul>
   </div>
   <div class="dropdown">
     <a class="dropdown-toggle text-white text-decoration-none" data-bs-toggle="dropdown" role="button">Otros</a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Producto 1</a></li>
-      <li><a class="dropdown-item" href="#">Producto 2</a></li>
+      <li><a class="dropdown-item" routerLink="/shop/otros">Ver todos</a></li>
     </ul>
   </div>
   <div>
-    <a class="text-white text-decoration-none" href="#"><i class="bi bi-ticket-perforated me-1"></i>Ingresa cupón</a>
+    <a class="text-white text-decoration-none" href="#" (click)="openCuponModal(); $event.preventDefault()"><i class="bi bi-ticket-perforated me-1"></i>Ingresa cupón</a>
   </div>
 </nav>
 
@@ -100,11 +112,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex flex-column align-items-center gap-4 py-4">
-        <a href="#" class="text-premium text-decoration-none fs-4">Collares</a>
-        <a href="#" class="text-premium text-decoration-none fs-4">Zarcillos</a>
-        <a href="#" class="text-premium text-decoration-none fs-4">Brazaletes</a>
-        <a href="#" class="text-premium text-decoration-none fs-4">Otros</a>
-        <a class="text-premium text-decoration-none fs-5 mt-3" href="#"><i class="bi bi-ticket-perforated me-1"></i>Ingresa cupón</a>
+        <a routerLink="/shop/collares" class="text-premium text-decoration-none fs-4">Collares</a>
+        <a routerLink="/shop/zarcillos" class="text-premium text-decoration-none fs-4">Zarcillos</a>
+        <a routerLink="/shop/brazaletes" class="text-premium text-decoration-none fs-4">Brazaletes</a>
+        <a routerLink="/shop/otros" class="text-premium text-decoration-none fs-4">Otros</a>
+        <a class="text-premium text-decoration-none fs-5 mt-3" href="#" (click)="openCuponModal(); $event.preventDefault()"><i class="bi bi-ticket-perforated me-1"></i>Ingresa cupón</a>
       </div>
     </div>
   </div>
